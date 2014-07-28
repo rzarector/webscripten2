@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>My Vinyl Collection</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ app.request.baseUrl }}/assets/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ app.request.baseUrl }}/assets/public/css/bootstrap-theme.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery & Bootstrap -->
+    <script type="text/javascript" src="{{ app.request.baseUrl }}/assets/public/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="{{ app.request.baseUrl }}/assets/public/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <h1><span>My Vinyl Collection</span></h1>
+
+    <div class="row">
+
+        <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-3">
+            <div class="well clearfix">
+                <form action="{{ path('overview') }}" method="post" novalidate="novalidate" role="form">
+                    <fieldset>
+                        <legend>Filter Collection</legend>
+                        <div class="form-group">
+                            {{ form_label(filterForm.title) }}
+                            {{ form_widget(filterForm.title) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(filterForm.genre) }}
+                            {{ form_widget(filterForm.genre) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(filterForm.year) }}
+                            {{ form_widget(filterForm.year) }}
+                        </div>
+                        {{ form_widget(filterForm._token) }}
+                        <input type="submit" class="btn btn-primary pull-right" value="Filter" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-9">
+
+            <div class="row">
+                {% for album in albums %}
+                    <article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                            <div class="album-cover"><img src="{{ app.request.baseUrl }}/uploads/{{ album.id }}.png" /></div>
+                            <p class="album-title">{{ album.title }}</p>
+                            <p class="album-artist">{{ album.artist_name }}</p>
+                            <p class="album-year text-muted"><em>{{ album.released }}</em></p>
+                    </article>
+                {% endfor %}
+            </div>
+
+            {{ pagination | raw }}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

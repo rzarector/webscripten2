@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+body {
+	background: #f9f8f9;
+}
+
+h1 {
+	text-align: center;
+	font-size: 4em;
+	margin-bottom: 1em;
+	font-family: 'Amatic SC';
+}
+
+h1 span {
+	background: transparent url(../../../favicon.ico) no-repeat 0 55%;
+	background-size: 1.2em;
+	padding-left: 1.4em;
+}
+
+legend {
+	font-family: 'Amatic SC';
+	font-size: 2em;
+}
+
+.album {
+	margin-bottom: 0.5em;
+}
+
+.album a, .album a:hover {
+	text-decoration: none;
+	color: #444;
+}
+
+.album a:hover {
+	color: #000;
+}
+
+.album-title {
+	font-weight: 700;
+	margin-bottom: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.album-artist {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.album-year {
+	text-align: center;
+}
+
+.album-cover {
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
+	background-color: #888;
+	border: 1px solid #888;
+	box-shadow: 2px 2px 5px #aaa;
+	position: relative;
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+
+}
+.album-cover img {
+	width: 100%;
+}
+.album-cover {
+	transition: all 0.25s ease-in;
+}
+.album-cover:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: transparent url('../img/vinyl.png') no-repeat 50% 50%;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all 0.25s ease-in;
+}
+
+/* slide out cover when hovering, make sure it's over the other covers */
+.album:hover {
+	z-index: 2;
+}
+.album-cover:hover {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.album-cover:hover::after {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	left: 47%;
+}

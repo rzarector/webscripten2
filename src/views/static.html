@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>My Vinyl Collection</title>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="cleartype" content="on" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/public/css/bootstrap-theme.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- jQuery & Bootstrap -->
+	<script src="assets/public/js/jquery-2.1.0.min.js"></script>
+	<script src="assets/public/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+	<div class="container">
+		<h1><span>My Vinyl Collection</span></h1>
+
+<div class="row">
+
+	<div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-3">
+		<div class="well clearfix">
+			<form action="/music/" method="post"  novalidate="novalidate" role="form">
+				<fieldset>
+					<legend>Filter Collection</legend>
+					<div class="form-group">
+						<label for="filterform_title" class="required">Title</label>
+						<input type="text" id="filterform_title" name="filterform[title]" required="required" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label for="filterform_genre" class="required">Genre</label>
+						<select id="filterform_genre" name="filterform[genre]" class="form-control"><option value="0">Choose...</option><option value="1">Classic Rock</option><option value="2">Country</option><option value="3">Dance</option><option value="4">Disco</option><option value="5">Funk</option><option value="6">Grunge</option><option value="7">Hip-Hop</option><option value="8">Jazz</option><option value="9">Metal</option><option value="10">New Age</option><option value="11">Oldies</option><option value="12">Other</option><option value="13">Pop</option><option value="14">R&amp;B</option><option value="15">Rap</option><option value="16">Reggae</option><option value="17">Rock</option><option value="18">Techno</option><option value="19">Industrial</option><option value="20">Alternative</option><option value="21">Ska</option><option value="22">Death Metal</option><option value="23">Pranks</option><option value="24">Soundtrack</option><option value="25">Euro-Techno</option><option value="26">Ambient</option><option value="27">Trip-Hop</option><option value="28">Vocal</option><option value="29">Jazz+Funk</option><option value="30">Fusion</option><option value="31">Trance</option><option value="32">Classical</option><option value="33">Instrumental</option><option value="34">Acid</option><option value="35">House</option><option value="36">Game</option><option value="37">Sound Clip</option><option value="38">Gospel</option><option value="39">Noise</option><option value="40">AlternRock</option><option value="41">Bass</option><option value="42">Soul</option><option value="43">Punk</option><option value="44">Space</option><option value="45">Meditative</option><option value="46">Instrumental Pop</option><option value="47">Instrumental Rock</option><option value="48">Ethnic</option><option value="49">Gothic</option><option value="50">Darkwave</option><option value="51">Techno-Industrial</option><option value="52">Electronic</option><option value="53">Pop-Folk</option><option value="54">Eurodance</option><option value="55">Dream</option><option value="56">Southern Rock</option><option value="57">Comedy</option><option value="58">Cult</option><option value="59">Gangsta</option><option value="60">Top 40</option><option value="61">Christian Rap</option><option value="62">Pop/Funk</option><option value="63">Jungle</option><option value="64">Native American</option><option value="65">Cabaret</option><option value="66">New Wave</option><option value="67">Psychadelic</option><option value="68">Rave</option><option value="69">Showtunes</option><option value="70">Trailer</option><option value="71">Lo-Fi</option><option value="72">Tribal</option><option value="73">Acid Punk</option><option value="74">Acid Jazz</option><option value="75">Polka</option><option value="76">Retro</option><option value="77">Musical</option><option value="78">Rock &amp; Roll</option><option value="79">Hard Rock</option><option value="80">Folk</option><option value="81">Folk-Rock</option><option value="82">National Folk</option><option value="83">Swing</option><option value="84">Fast Fusion</option><option value="85">Bebob</option><option value="86">Latin</option><option value="87">Revival</option><option value="88">Celtic</option><option value="89">Bluegrass</option><option value="90">Avantgarde</option><option value="91">Gothic Rock</option><option value="92">Progressive Rock</option><option value="93">Psychedelic Rock</option><option value="94">Symphonic Rock</option><option value="95">Slow Rock</option><option value="96">Big Band</option><option value="97">Chorus</option><option value="98">Easy Listening</option><option value="99">Acoustic</option><option value="103">Opera</option><option value="104">Chamber Music</option><option value="105">Sonata</option><option value="106">Symphony</option><option value="107">Booty Bass</option><option value="108">Primus</option><option value="109">Porn Groove</option><option value="110">Satire</option><option value="111">Slow Jam</option><option value="112">Club</option><option value="113">Tango</option><option value="114">Samba</option><option value="115">Folklore</option><option value="116">Ballad</option><option value="117">Power Ballad</option><option value="118">Rhythmic Soul</option><option value="119">Freestyle</option><option value="120">Duet</option><option value="121">Punk Rock</option><option value="122">Drum Solo</option></select>
+					</div>
+					<div class="form-group">
+						<label for="filterform_year" class="required">Year</label>
+						<input type="text" id="filterform_year" name="filterform[year]" required="required" class="form-control" />
+					</div>
+					<input type="hidden" id="filterform__token" name="filterform[_token]" value="45072b220b3b190f6f6d863b5cd2a0d55f523c54" />
+					<input type="submit" class="btn btn-primary pull-right" value="Filter" />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="col-sm-12 col-md-9">
+
+				<div class="row">
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Sigur+R%C3%B3s,%20%28+%29">
+					<div class="album-cover"><img src="uploads/12.png" /></div>
+					<p class="album-title">( )</p>
+					<p class="album-artist">Sigur Rós</p>
+					<p class="album-year text-muted"><em>(2002)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:SBTRKT,%202020">
+					<div class="album-cover"><img src="uploads/29.png" /></div>
+					<p class="album-title">2020</p>
+					<p class="album-artist">SBTRKT</p>
+					<p class="album-year text-muted"><em>(2010)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Sigur+R%C3%B3s,%20%C3%81g%C3%A6tis+byrjun">
+					<div class="album-cover"><img src="uploads/8.png" /></div>
+					<p class="album-title">Ágætis byrjun</p>
+					<p class="album-artist">Sigur Rós</p>
+					<p class="album-year text-muted"><em>(2001)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:%E2%88%86,%20An+Awesome+Wave">
+					<div class="album-cover"><img src="uploads/34.png" /></div>
+					<p class="album-title">An Awesome Wave</p>
+					<p class="album-artist">∆</p>
+					<p class="album-year text-muted"><em>(2012)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Fat+Freddy%27s+Drop,%20Based+on+a+True+Story">
+					<div class="album-cover"><img src="uploads/16.png" /></div>
+					<p class="album-title">Based on a True Story</p>
+					<p class="album-artist">Fat Freddy&#039;s Drop</p>
+					<p class="album-year text-muted"><em>(2007)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Bonobo,%20Black+Sands">
+					<div class="album-cover"><img src="uploads/3.png" /></div>
+					<p class="album-title">Black Sands</p>
+					<p class="album-artist">Bonobo</p>
+					<p class="album-year text-muted"><em>(2010)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Fat+Freddy%27s+Drop,%20Blackbird">
+					<div class="album-cover"><img src="uploads/17.png" /></div>
+					<p class="album-title">Blackbird</p>
+					<p class="album-artist">Fat Freddy&#039;s Drop</p>
+					<p class="album-year text-muted"><em>(2013)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Bonobo,%20Days+to+Come">
+					<div class="album-cover"><img src="uploads/1.png" /></div>
+					<p class="album-title">Days to Come</p>
+					<p class="album-artist">Bonobo</p>
+					<p class="album-year text-muted"><em>(2006)</em></p>
+				</a>
+			</article>
+					<article class="album col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+				<a href="spotify:search:Fat+Freddy%27s+Drop,%20Dr.+Boondigga+%26+The+Big+Bw">
+					<div class="album-cover"><img src="uploads/18.png" /></div>
+					<p class="album-title">Dr. Boondigga &amp; The Big Bw</p>
+					<p class="album-artist">Fat Freddy&#039;s Drop</p>
+					<p class="album-year text-muted"><em>(2009)</em></p>
+				</a>
+			</article>
+				</div>
+
+<div class="text-center">
+	<ul class="pagination pagination-sm">
+
+					<li class="previousPage disabled"><span>&lt; previous</span></li>
+
+				<li  class="active">
+							<span>1</span>
+					</li>
+				<li >
+							<a href="?p=2" data-p="2">2</a>
+					</li>
+				<li >
+							<a href="?p=3" data-p="3">3</a>
+					</li>
+				<li >
+							<a href="?p=4" data-p="4">4</a>
+					</li>
+
+					<li class="nextPage"><a href="?p=2" data-p="2">next &gt;</a></li>
+
+	</ul>
+
+    <p class="text-muted">
+        <em>34 items</em>
+    </p>
+
+</div>
+
+
+	</div>
+
+</div>
+
+	</div>
+
+</body>
+</html>
